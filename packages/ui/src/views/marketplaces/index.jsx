@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -26,27 +27,25 @@ import {
     Button
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { IconHierarchy, IconTool, IconChevronsDown, IconChevronsUp, IconLayoutGrid, IconList, IconSearch } from '@tabler/icons'
+import { IconChevronsDown, IconChevronsUp, IconLayoutGrid, IconList, IconSearch } from '@tabler/icons'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import ItemCard from 'ui-component/cards/ItemCard'
-import { gridSpacing } from 'store/constant'
-import WorkflowEmptySVG from 'assets/images/workflow_empty.svg'
-import ToolDialog from 'views/tools/ToolDialog'
+import MainCard from '@/ui-component/cards/MainCard'
+import ItemCard from '@/ui-component/cards/ItemCard'
+import { gridSpacing } from '@/store/constant'
+import WorkflowEmptySVG from '@/assets/images/workflow_empty.svg'
+import ToolDialog from '@/views/tools/ToolDialog'
 
 // API
-import marketplacesApi from 'api/marketplaces'
+import marketplacesApi from '@/api/marketplaces'
 
 // Hooks
-import useApi from 'hooks/useApi'
+import useApi from '@/hooks/useApi'
 
 // const
-import { baseURL } from 'store/constant'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
-import * as React from 'react'
+import { baseURL } from '@/store/constant'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-import { MarketplaceTable } from '../../ui-component/table/MarketplaceTable'
+import { MarketplaceTable } from '@/ui-component/table/MarketplaceTable'
 import MenuItem from '@mui/material/MenuItem'
 
 function TabPanel(props) {
@@ -91,16 +90,6 @@ const Marketplace = () => {
     const theme = useTheme()
     const customization = useSelector((state) => state.customization)
 
-    // const [isChatflowsLoading, setChatflowsLoading] = useState(true)
-    // const [isToolsLoading, setToolsLoading] = useState(true)
-    // const [images, setImages] = useState({})
-    // const tabItems = ['Chatflows', 'Tools']
-    // const [value, setValue] = useState(0)
-    // const [showToolDialog, setShowToolDialog] = useState(false)
-    // const [toolDialogProps, setToolDialogProps] = useState({})
-
-    // const getAllChatflowsMarketplacesApi = useApi(marketplacesApi.getAllChatflowsMarketplaces)
-    // const getAllToolsMarketplacesApi = useApi(marketplacesApi.getAllToolsMarketplaces)
     const [isLoading, setLoading] = useState(true)
     const [images, setImages] = useState({})
 
@@ -145,6 +134,7 @@ const Marketplace = () => {
     }
 
     const handleViewChange = (event, nextView) => {
+        if (nextView === null) return
         localStorage.setItem('mpDisplayStyle', nextView)
         setView(nextView)
     }
@@ -199,14 +189,6 @@ const Marketplace = () => {
         navigate(`/marketplace/${selectedChatflow.id}`, { state: selectedChatflow })
     }
 
-    // const handleChange = (event, newValue) => {
-    //     setValue(newValue)
-    // }
-
-    // // Request for getting data of chatflows and tools
-    // useEffect(() => {
-    //     getAllChatflowsMarketplacesApi.request()
-    //     getAllToolsMarketplacesApi.request()
     useEffect(() => {
         getAllTemplatesMarketplacesApi.request()
 
@@ -214,27 +196,6 @@ const Marketplace = () => {
     }, [])
 
     useEffect(() => {
-    //     setChatflowsLoading(getAllChatflowsMarketplacesApi.loading)
-    // }, [getAllChatflowsMarketplacesApi.loading])
-
-    // useEffect(() => {
-    //     setToolsLoading(getAllToolsMarketplacesApi.loading)
-    // }, [getAllToolsMarketplacesApi.loading])
-
-    // useEffect(() => {
-    //     if (getAllChatflowsMarketplacesApi.data) {
-    //         try {
-    //             const chatflows = getAllChatflowsMarketplacesApi.data
-    //             const images = {}
-    //             for (let i = 0; i < chatflows.length; i += 1) {
-    //                 const flowDataStr = chatflows[i].flowData
-    //                 const flowData = JSON.parse(flowDataStr)
-    //                 const nodes = flowData.nodes || []
-    //                 images[chatflows[i].id] = []
-    //                 for (let j = 0; j < nodes.length; j += 1) {
-    //                     const imageSrc = `${baseURL}/api/v1/node-icon/${nodes[j].data.name}`
-    //                     if (!images[chatflows[i].id].includes(imageSrc)) {
-    //                         images[chatflows[i].id].push(imageSrc)
         setLoading(getAllTemplatesMarketplacesApi.loading)
     }, [getAllTemplatesMarketplacesApi.loading])
 
@@ -263,7 +224,6 @@ const Marketplace = () => {
                 console.error(e)
             }
         }
-    // }, [getAllChatflowsMarketplacesApi.data])
     }, [getAllTemplatesMarketplacesApi.data])
 
     return (
@@ -498,4 +458,4 @@ const Marketplace = () => {
     )
 }
 
-export default withAuthenticationRequired(Marketplace)
+export default Marketplace

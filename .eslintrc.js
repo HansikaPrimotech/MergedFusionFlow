@@ -6,7 +6,7 @@ module.exports = {
         'plugin:react/jsx-runtime',
         'plugin:react-hooks/recommended',
         'plugin:jsx-a11y/recommended',
-        // 'plugin:prettier/recommended'
+        'plugin:prettier/recommended'
     ],
     settings: {
         react: {
@@ -23,6 +23,6 @@ module.exports = {
         'unused-imports/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' }],
         'no-undef': 'off',
         'no-console': [process.env.CI ? 'error' : 'warn', { allow: ['warn', 'error', 'info'] }],
-        // 'prettier/prettier': 'error'
+        'prettier/prettier': 'error'
     }
 }

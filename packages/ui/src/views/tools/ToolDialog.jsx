@@ -2,33 +2,33 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from '@/store/actions'
 import { cloneDeep } from 'lodash'
 
 import { Box, Typography, Button, Dialog, DialogActions, DialogContent, DialogTitle, Stack, OutlinedInput } from '@mui/material'
-import { StyledButton } from 'ui-component/button/StyledButton'
-import { Grid } from 'ui-component/grid/Grid'
-import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
+import { StyledButton } from '@/ui-component/button/StyledButton'
+import { Grid } from '@/ui-component/grid/Grid'
+import { TooltipWithParser } from '@/ui-component/tooltip/TooltipWithParser'
 import { GridActionsCellItem } from '@mui/x-data-grid'
 import DeleteIcon from '@mui/icons-material/Delete'
-import ConfirmDialog from 'ui-component/dialog/ConfirmDialog'
-import { CodeEditor } from 'ui-component/editor/CodeEditor'
+import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
+import { CodeEditor } from '@/ui-component/editor/CodeEditor'
 import HowToUseFunctionDialog from './HowToUseFunctionDialog'
 
 // Icons
 import { IconX, IconFileExport } from '@tabler/icons'
 
 // API
-import toolsApi from 'api/tools'
+import toolsApi from '@/api/tools'
 
 // Hooks
-import useConfirm from 'hooks/useConfirm'
-import useApi from 'hooks/useApi'
+import useConfirm from '@/hooks/useConfirm'
+import useApi from '@/hooks/useApi'
 
 // utils
-import useNotifier from 'utils/useNotifier'
-import { generateRandomGradient, formatDataGridRows } from 'utils/genericHelper'
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
+import useNotifier from '@/utils/useNotifier'
+import { generateRandomGradient, formatDataGridRows } from '@/utils/genericHelper'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
 
 const exampleAPIFunc = `/*
 * You can use any libraries imported in Fusion Flow

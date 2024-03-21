@@ -9,10 +9,10 @@ import { Popper, CircularProgress, TextField, Box, Typography } from '@mui/mater
 import { styled } from '@mui/material/styles'
 
 // API
-import credentialsApi from 'api/credentials'
+import credentialsApi from '@/api/credentials'
 
 // const
-import { baseURL } from 'store/constant'
+import { baseURL } from '@/store/constant'
 
 const StyledPopper = styled(Popper)({
     boxShadow: '0px 8px 10px -5px rgb(0 0 0 / 20%), 0px 16px 24px 2px rgb(0 0 0 / 14%), 0px 6px 30px 5px rgb(0 0 0 / 12%)',

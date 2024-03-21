@@ -2,8 +2,8 @@ import { getBezierPath, EdgeText } from 'reactflow'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { useContext } from 'react'
-import { SET_DIRTY } from 'store/actions'
-import { flowContext } from 'store/context/ReactFlowContext'
+import { SET_DIRTY } from '@/store/actions'
+import { flowContext } from '@/store/context/ReactFlowContext'
 
 import './index.css'
 

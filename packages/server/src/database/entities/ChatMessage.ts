@@ -11,7 +11,11 @@ export class ChatMessage implements IChatMessage {
     role: MessageType
 
     @Index()
+<<<<<<< HEAD
     @Column()
+=======
+    @Column({ type: 'uuid' })
+>>>>>>> merged
     chatflowid: string
 
     @Column({ type: 'text' })
@@ -26,18 +30,35 @@ export class ChatMessage implements IChatMessage {
     @Column({ nullable: true, type: 'text' })
     fileAnnotations?: string
 
+<<<<<<< HEAD
     @Column()
     chatType: string
 
     @Column()
+=======
+    @Column({ nullable: true, type: 'text' })
+    fileUploads?: string
+
+    @Column()
+    chatType: string
+
+    @Column({ type: 'uuid' })
+>>>>>>> merged
     chatId: string
 
     @Column({ nullable: true })
     memoryType?: string
 
+<<<<<<< HEAD
     @Column({ nullable: true })
     sessionId?: string
 
+=======
+    @Column({ type: 'uuid', nullable: true })
+    sessionId?: string
+
+    @Column({type:'timestamp'})
+>>>>>>> merged
     @CreateDateColumn()
     createdDate: Date
 }

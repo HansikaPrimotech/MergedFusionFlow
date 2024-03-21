@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import { Stack, Typography, Dialog, DialogContent, DialogTitle, DialogActions, Box } from '@mui/material'
-import CredentialInputHandler from 'views/canvas/CredentialInputHandler'
-import { Dropdown } from 'ui-component/dropdown/Dropdown'
-import { StyledButton } from 'ui-component/button/StyledButton'
-import assistantsApi from 'api/assistants'
-import useApi from 'hooks/useApi'
+import CredentialInputHandler from '@/views/canvas/CredentialInputHandler'
+import { Dropdown } from '@/ui-component/dropdown/Dropdown'
+import { StyledButton } from '@/ui-component/button/StyledButton'
+import assistantsApi from '@/api/assistants'
+import useApi from '@/hooks/useApi'
 
 const LoadAssistantDialog = ({ show, dialogProps, onCancel, onAssistantSelected }) => {
     const portalElement = document.getElementById('portal')

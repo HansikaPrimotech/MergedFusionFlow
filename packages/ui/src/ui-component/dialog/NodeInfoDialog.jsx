@@ -5,15 +5,15 @@ import PropTypes from 'prop-types'
 
 // Material
 import { Dialog, DialogContent, DialogTitle } from '@mui/material'
-import { TableViewOnly } from 'ui-component/table/Table'
+import { TableViewOnly } from '@/ui-component/table/Table'
 
 // Store
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
-import { baseURL } from 'store/constant'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
+import { baseURL } from '@/store/constant'
 
 // API
-import configApi from 'api/config'
-import useApi from 'hooks/useApi'
+import configApi from '@/api/config'
+import useApi from '@/hooks/useApi'
 
 const NodeInfoDialog = ({ show, dialogProps, onCancel }) => {
     const portalElement = document.getElementById('portal')

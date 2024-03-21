@@ -25,9 +25,17 @@ export class Tool implements ITool {
     @Column({ nullable: true, type: 'text' })
     func?: string
 
+<<<<<<< HEAD
     @CreateDateColumn()
     createdDate: Date
 
+=======
+    @Column({type:'timestamp'})
+    @CreateDateColumn()
+    createdDate: Date
+
+    @Column({type:'timestamp'})
+>>>>>>> merged
     @UpdateDateColumn()
     updatedDate: Date
 }

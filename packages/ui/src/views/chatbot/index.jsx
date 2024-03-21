@@ -3,17 +3,16 @@ import { FullPageChat } from 'flowise-embed-react'
 import { useNavigate } from 'react-router-dom'
 
 // Project import
-import LoginDialog from 'ui-component/dialog/LoginDialog'
+import LoginDialog from '@/ui-component/dialog/LoginDialog'
 
 // API
-import chatflowsApi from 'api/chatflows'
+import chatflowsApi from '@/api/chatflows'
 
 // Hooks
-import useApi from 'hooks/useApi'
+import useApi from '@/hooks/useApi'
 
 //Const
-import { baseURL } from 'store/constant'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
+import { baseURL } from '@/store/constant'
 
 // ==============================|| Chatbot ||============================== //
 
@@ -122,4 +121,4 @@ const ChatbotFull = () => {
     )
 }
 
-export default withAuthenticationRequired(ChatbotFull)
+export default ChatbotFull

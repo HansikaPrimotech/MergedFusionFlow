@@ -6,9 +6,9 @@ import { useEffect, useRef, useState, useContext } from 'react'
 import { useTheme, styled } from '@mui/material/styles'
 import { Box, Typography, Tooltip } from '@mui/material'
 import { tooltipClasses } from '@mui/material/Tooltip'
-import { flowContext } from 'store/context/ReactFlowContext'
-import { isValidConnection } from 'utils/genericHelper'
-import { Dropdown } from 'ui-component/dropdown/Dropdown'
+import { flowContext } from '@/store/context/ReactFlowContext'
+import { isValidConnection } from '@/utils/genericHelper'
+import { Dropdown } from '@/ui-component/dropdown/Dropdown'
 
 const CustomWidthTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)({
     [`& .${tooltipClasses.tooltip}`]: {

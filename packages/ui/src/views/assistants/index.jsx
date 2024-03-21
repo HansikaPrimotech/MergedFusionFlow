@@ -6,23 +6,22 @@ import { Grid, Box, Stack, Button, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import ItemCard from 'ui-component/cards/ItemCard'
-import { gridSpacing } from 'store/constant'
-import ToolEmptySVG from 'assets/images/tools_empty.svg'
-import { StyledButton } from 'ui-component/button/StyledButton'
+import MainCard from '@/ui-component/cards/MainCard'
+import ItemCard from '@/ui-component/cards/ItemCard'
+import { gridSpacing } from '@/store/constant'
+import ToolEmptySVG from '@/assets/images/tools_empty.svg'
+import { StyledButton } from '@/ui-component/button/StyledButton'
 import AssistantDialog from './AssistantDialog'
 import LoadAssistantDialog from './LoadAssistantDialog'
 
 // API
-import assistantsApi from 'api/assistants'
+import assistantsApi from '@/api/assistants'
 
 // Hooks
-import useApi from 'hooks/useApi'
+import useApi from '@/hooks/useApi'
 
 // icons
 import { IconPlus, IconFileImport } from '@tabler/icons'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // ==============================|| CHATFLOWS ||============================== //
 
@@ -145,4 +144,4 @@ const Assistants = () => {
     )
 }
 
-export default withAuthenticationRequired(Assistants)
+export default Assistants

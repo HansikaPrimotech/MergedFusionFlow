@@ -3,54 +3,23 @@ import { useContext, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
 // material-ui
-// import { styled, useTheme } from '@mui/material/styles'
-// import { IconButton, Box, Typography, Divider, Button } from '@mui/material'
-// import Tooltip, { tooltipClasses } from '@mui/material/Tooltip'
-
-// // project imports
-// import MainCard from 'ui-component/cards/MainCard'
 import { useTheme } from '@mui/material/styles'
 import { IconButton, Box, Typography, Divider, Button } from '@mui/material'
 import Tooltip from '@mui/material/Tooltip'
 
 // project imports
-import NodeCardWrapper from '../../ui-component/cards/NodeCardWrapper'
-import NodeTooltip from '../../ui-component/tooltip/NodeTooltip'
+import NodeCardWrapper from '@/ui-component/cards/NodeCardWrapper'
+import NodeTooltip from '@/ui-component/tooltip/NodeTooltip'
 import NodeInputHandler from './NodeInputHandler'
 import NodeOutputHandler from './NodeOutputHandler'
-import AdditionalParamsDialog from 'ui-component/dialog/AdditionalParamsDialog'
-import NodeInfoDialog from 'ui-component/dialog/NodeInfoDialog'
+import AdditionalParamsDialog from '@/ui-component/dialog/AdditionalParamsDialog'
+import NodeInfoDialog from '@/ui-component/dialog/NodeInfoDialog'
 
 // const
-import { baseURL } from 'store/constant'
+import { baseURL } from '@/store/constant'
 import { IconTrash, IconCopy, IconInfoCircle, IconAlertTriangle } from '@tabler/icons'
-import { flowContext } from 'store/context/ReactFlowContext'
-
-// const CardWrapper = styled(MainCard)(({ theme }) => ({
-//     background: theme.palette.card.main,
-//     // background: theme.paper,
-//     color: theme.darkTextPrimary,
-//     border: 'solid 1px',
-//     borderColor: theme.palette.primary[200] + 75,
-//     width: '300px',
-//     height: 'auto',
-//     padding: '10px',
-//     boxShadow: '0 2px 14px 0 rgb(32 40 45 / 8%)',
-//     '&:hover': {
-//         borderColor: theme.palette.primary.main
-//     // background: theme.paper,
-
-//     }
-// }))
-
-// const LightTooltip = styled(({ className, ...props }) => <Tooltip {...props} classes={{ popper: className }} />)(({ theme }) => ({
-//     [`& .${tooltipClasses.tooltip}`]: {
-//         backgroundColor: theme.palette.nodeToolTip.background,
-//         color: theme.palette.nodeToolTip.color,
-//         boxShadow: theme.shadows[1]
-//     }
-// }))
-import LlamaindexPNG from 'assets/images/llamaindex.png'
+import { flowContext } from '@/store/context/ReactFlowContext'
+import LlamaindexPNG from '@/assets/images/llamaindex.png'
 
 // ===========================|| CANVAS NODE ||=========================== //
 
@@ -81,7 +50,7 @@ const CanvasNode = ({ data }) => {
     const onDialogClicked = () => {
         const dialogProps = {
             data,
-            inputParams: data.inputParams.filter((param) => param.additionalParams),
+            inputParams: data.inputParams.filter((inputParam) => !inputParam.hidden).filter((param) => param.additionalParams),
             confirmButtonName: 'Save',
             cancelButtonName: 'Cancel'
         }
@@ -104,7 +73,6 @@ const CanvasNode = ({ data }) => {
 
     return (
         <>
-            {/* <CardWrapper */}
             <NodeCardWrapper
                 content={false}
                 sx={{
@@ -113,7 +81,6 @@ const CanvasNode = ({ data }) => {
                 }}
                 border={false}
             >
-                {/* <LightTooltip */}
                 <NodeTooltip
                     open={!canvas.canvasDialogShow && open}
                     onClose={handleClose}
@@ -276,8 +243,6 @@ const CanvasNode = ({ data }) => {
                             <NodeOutputHandler key={index} outputAnchor={outputAnchor} data={data} />
                         ))}
                     </Box>
-                {/* </LightTooltip>
-            </CardWrapper> */}
                 </NodeTooltip>
             </NodeCardWrapper>
             <AdditionalParamsDialog

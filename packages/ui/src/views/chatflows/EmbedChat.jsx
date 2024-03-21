@@ -5,10 +5,10 @@ import { Tabs, Tab, Box } from '@mui/material'
 import { CopyBlock, atomOneDark } from 'react-code-blocks'
 
 // Project import
-import { CheckboxInput } from 'ui-component/checkbox/Checkbox'
+import { CheckboxInput } from '@/ui-component/checkbox/Checkbox'
 
 // Const
-import { baseURL } from 'store/constant'
+import { baseURL } from '@/store/constant'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props

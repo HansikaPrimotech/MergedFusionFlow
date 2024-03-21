@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Dialog, DialogContent, DialogTitle } from '@mui/material'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import { JsonEditorInput } from 'ui-component/json/JsonEditor'
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
+import { JsonEditorInput } from '@/ui-component/json/JsonEditor'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
 
 const FormatPromptValuesDialog = ({ show, dialogProps, onChange, onCancel }) => {
     const portalElement = document.getElementById('portal')
@@ -28,7 +28,7 @@ const FormatPromptValuesDialog = ({ show, dialogProps, onChange, onCancel }) => 
             aria-describedby='alert-dialog-description'
         >
             <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                Format Prompt Values
+                {dialogProps.inputParam.label ?? 'Format Prompt Values'}
             </DialogTitle>
             <DialogContent>
                 <PerfectScrollbar

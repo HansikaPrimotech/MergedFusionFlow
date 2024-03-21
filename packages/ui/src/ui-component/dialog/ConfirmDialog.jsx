@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
-import useConfirm from 'hooks/useConfirm'
-import { StyledButton } from 'ui-component/button/StyledButton'
+import useConfirm from '@/hooks/useConfirm'
+import { StyledButton } from '@/ui-component/button/StyledButton'
 
 const ConfirmDialog = () => {
     const { onConfirm, onCancel, confirmState } = useConfirm()

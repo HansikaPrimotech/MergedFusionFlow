@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from '@/store/actions'
 
 // material-ui
 import {
@@ -27,20 +27,20 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import { useTheme, styled } from '@mui/material/styles'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import { StyledButton } from 'ui-component/button/StyledButton'
+import MainCard from '@/ui-component/cards/MainCard'
+import { StyledButton } from '@/ui-component/button/StyledButton'
 import APIKeyDialog from './APIKeyDialog'
-import ConfirmDialog from 'ui-component/dialog/ConfirmDialog'
+import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
 
 // API
-import apiKeyApi from 'api/apikey'
+import apiKeyApi from '@/api/apikey'
 
 // Hooks
-import useApi from 'hooks/useApi'
-import useConfirm from 'hooks/useConfirm'
+import useApi from '@/hooks/useApi'
+import useConfirm from '@/hooks/useConfirm'
 
 // utils
-import useNotifier from 'utils/useNotifier'
+import useNotifier from '@/utils/useNotifier'
 
 // Icons
 import {
@@ -55,10 +55,9 @@ import {
     IconEye,
     IconEyeOff
 } from '@tabler/icons'
-import APIEmptySVG from 'assets/images/api_empty.svg'
+import APIEmptySVG from '@/assets/images/api_empty.svg'
 import * as PropTypes from 'prop-types'
 import moment from 'moment/moment'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // ==============================|| APIKey ||============================== //
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -432,4 +431,4 @@ const APIKey = () => {
     )
 }
 
-export default withAuthenticationRequired(APIKey)
+export default APIKey

@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from '@/store/actions'
 
 import {
     Box,
@@ -18,16 +18,16 @@ import {
     Popover
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { StyledButton } from 'ui-component/button/StyledButton'
+import { StyledButton } from '@/ui-component/button/StyledButton'
 
 // Icons
 import { IconX, IconCopy } from '@tabler/icons'
 
 // API
-import apikeyApi from 'api/apikey'
+import apikeyApi from '@/api/apikey'
 
 // utils
-import useNotifier from 'utils/useNotifier'
+import useNotifier from '@/utils/useNotifier'
 
 const APIKeyDialog = ({ show, dialogProps, onCancel, onConfirm }) => {
     const portalElement = document.getElementById('portal')

@@ -11,32 +11,31 @@ import { tooltipClasses } from '@mui/material/Tooltip'
 import { IconArrowsMaximize, IconEdit, IconAlertTriangle } from '@tabler/icons'
 
 // project import
-import { Dropdown } from 'ui-component/dropdown/Dropdown'
-import { MultiDropdown } from 'ui-component/dropdown/MultiDropdown'
-import { AsyncDropdown } from 'ui-component/dropdown/AsyncDropdown'
-import { Input } from 'ui-component/input/Input'
-import { DataGrid } from 'ui-component/grid/DataGrid'
-import { File } from 'ui-component/file/File'
-import { SwitchInput } from 'ui-component/switch/Switch'
-import { flowContext } from 'store/context/ReactFlowContext'
-import { isValidConnection } from 'utils/genericHelper'
-import { JsonEditorInput } from 'ui-component/json/JsonEditor'
-import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
-import { CodeEditor } from 'ui-component/editor/CodeEditor'
-
-import ToolDialog from 'views/tools/ToolDialog'
-import AssistantDialog from 'views/assistants/AssistantDialog'
-import ExpandTextDialog from 'ui-component/dialog/ExpandTextDialog'
-import FormatPromptValuesDialog from 'ui-component/dialog/FormatPromptValuesDialog'
-import PromptLangsmithHubDialog from 'ui-component/dialog/PromptLangsmithHubDialog'
-import ManageScrapedLinksDialog from 'ui-component/dialog/ManageScrapedLinksDialog'
+import { Dropdown } from '@/ui-component/dropdown/Dropdown'
+import { MultiDropdown } from '@/ui-component/dropdown/MultiDropdown'
+import { AsyncDropdown } from '@/ui-component/dropdown/AsyncDropdown'
+import { Input } from '@/ui-component/input/Input'
+import { DataGrid } from '@/ui-component/grid/DataGrid'
+import { File } from '@/ui-component/file/File'
+import { SwitchInput } from '@/ui-component/switch/Switch'
+import { flowContext } from '@/store/context/ReactFlowContext'
+import { isValidConnection } from '@/utils/genericHelper'
+import { JsonEditorInput } from '@/ui-component/json/JsonEditor'
+import { TooltipWithParser } from '@/ui-component/tooltip/TooltipWithParser'
+import { CodeEditor } from '@/ui-component/editor/CodeEditor'
+import ToolDialog from '@/views/tools/ToolDialog'
+import AssistantDialog from '@/views/assistants/AssistantDialog'
+import FormatPromptValuesDialog from '@/ui-component/dialog/FormatPromptValuesDialog'
+import ExpandTextDialog from '@/ui-component/dialog/ExpandTextDialog'
+import PromptLangsmithHubDialog from '@/ui-component/dialog/PromptLangsmithHubDialog'
+import ManageScrapedLinksDialog from '@/ui-component/dialog/ManageScrapedLinksDialog'
 import CredentialInputHandler from './CredentialInputHandler'
 
 // utils
-import { getInputVariables } from 'utils/genericHelper'
+import { getInputVariables } from '@/utils/genericHelper'
 
 // const
-import { FLOWISE_CREDENTIAL_ID } from 'store/constant'
+import { FLOWISE_CREDENTIAL_ID } from '@/store/constant'
 
 const EDITABLE_OPTIONS = ['selectedTool', 'selectedAssistant']
 
@@ -394,7 +393,12 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                                 {inputParam?.acceptVariable && (
                                     <>
                                         <Button
-                                            sx={{ borderRadius: 25, width: '100%', mb: 0, mt: 2 }}
+                                            sx={{
+                                                borderRadius: 25,
+                                                width: '100%',
+                                                mb: 0,
+                                                mt: 2
+                                            }}
                                             variant='outlined'
                                             disabled={disabled}
                                             onClick={() => onEditJSONClicked(data.inputs[inputParam.name] ?? '', inputParam)}

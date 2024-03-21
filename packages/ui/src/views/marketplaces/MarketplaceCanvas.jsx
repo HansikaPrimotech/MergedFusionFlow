@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import ReactFlow, { Controls, Background, useNodesState, useEdgesState } from 'reactflow'
 import 'reactflow/dist/style.css'
-import 'views/canvas/index.css'
+import '@/views/canvas/index.css'
 
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -10,7 +10,6 @@ import { Toolbar, Box, AppBar } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 
 // project imports
-import { withAuthenticationRequired } from '@auth0/auth0-react'
 import MarketplaceCanvasNode from './MarketplaceCanvasNode'
 import MarketplaceCanvasHeader from './MarketplaceCanvasHeader'
 import StickyNote from '../canvas/StickyNote'
@@ -103,4 +102,4 @@ const MarketplaceCanvas = () => {
     )
 }
 
-export default withAuthenticationRequired(MarketplaceCanvas)
+export default MarketplaceCanvas

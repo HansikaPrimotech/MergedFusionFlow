@@ -4,14 +4,14 @@ import 'reactflow/dist/style.css'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { usePrompt } from '../../utils/usePrompt'
+import { usePrompt } from '@/utils/usePrompt'
 import {
     REMOVE_DIRTY,
     SET_DIRTY,
     SET_CHATFLOW,
     enqueueSnackbar as enqueueSnackbarAction,
     closeSnackbar as closeSnackbarAction
-} from 'store/actions'
+} from '@/store/actions'
 import { omit, cloneDeep } from 'lodash'
 
 // material-ui
@@ -24,29 +24,28 @@ import ButtonEdge from './ButtonEdge'
 import StickyNote from './StickyNote'
 import CanvasHeader from './CanvasHeader'
 import AddNodes from './AddNodes'
-import ConfirmDialog from 'ui-component/dialog/ConfirmDialog'
-import { ChatPopUp } from 'views/chatmessage/ChatPopUp'
-import { VectorStorePopUp } from 'views/vectorstore/VectorStorePopUp'
-import { flowContext } from 'store/context/ReactFlowContext'
+import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
+import { ChatPopUp } from '@/views/chatmessage/ChatPopUp'
+import { VectorStorePopUp } from '@/views/vectorstore/VectorStorePopUp'
+import { flowContext } from '@/store/context/ReactFlowContext'
 
 // API
-import nodesApi from 'api/nodes'
-import chatflowsApi from 'api/chatflows'
+import nodesApi from '@/api/nodes'
+import chatflowsApi from '@/api/chatflows'
 
 // Hooks
-import useApi from 'hooks/useApi'
-import useConfirm from 'hooks/useConfirm'
+import useApi from '@/hooks/useApi'
+import useConfirm from '@/hooks/useConfirm'
 
 // icons
 import { IconX } from '@tabler/icons'
 
 // utils
-import { getUniqueNodeId, initNode, rearrangeToolsOrdering, getUpsertDetails } from 'utils/genericHelper'
-import useNotifier from 'utils/useNotifier'
+import { getUniqueNodeId, initNode, rearrangeToolsOrdering, getUpsertDetails } from '@/utils/genericHelper'
+import useNotifier from '@/utils/useNotifier'
 
 // const
-import { FLOWISE_CREDENTIAL_ID } from 'store/constant'
-import { withAuthenticationRequired } from '@auth0/auth0-react'
+import { FLOWISE_CREDENTIAL_ID } from '@/store/constant'
 
 const nodeTypes = { customNode: CanvasNode, stickyNote: StickyNote }
 const edgeTypes = { buttonedge: ButtonEdge }
@@ -552,4 +551,4 @@ const Canvas = () => {
     )
 }
 
-export default withAuthenticationRequired(Canvas)
+export default Canvas

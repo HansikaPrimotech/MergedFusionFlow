@@ -10,15 +10,15 @@ import { useTheme } from '@mui/material/styles'
 import { LoadingButton } from '@mui/lab'
 
 // Project Import
-import { StyledButton } from 'ui-component/button/StyledButton'
-import { CodeEditor } from 'ui-component/editor/CodeEditor'
+import { StyledButton } from '@/ui-component/button/StyledButton'
+import { CodeEditor } from '@/ui-component/editor/CodeEditor'
 
 // Store
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
 
 // API
-import nodesApi from 'api/nodes'
-import useApi from 'hooks/useApi'
+import nodesApi from '@/api/nodes'
+import useApi from '@/hooks/useApi'
 
 import './ExpandTextDialog.css'
 

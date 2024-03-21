@@ -5,7 +5,7 @@ import { IconPlus } from '@tabler/icons'
 import { Button } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { cloneDeep } from 'lodash'
-import { formatDataGridRows } from 'utils/genericHelper'
+import { formatDataGridRows } from '@/utils/genericHelper'
 
 export const DataGrid = ({ columns, rows, style, disabled = false, hideFooter = false, onChange }) => {
     const [rowValues, setRowValues] = useState(formatDataGridRows(rows) ?? [])

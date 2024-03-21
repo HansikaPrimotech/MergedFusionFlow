@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // material-ui
 import { IconButton } from '@mui/material'
 import { IconEdit } from '@tabler/icons'
 
 // project import
-import { AsyncDropdown } from 'ui-component/dropdown/AsyncDropdown'
-import AddEditCredentialDialog from 'views/credentials/AddEditCredentialDialog'
-import CredentialListDialog from 'views/credentials/CredentialListDialog'
+import { AsyncDropdown } from '@/ui-component/dropdown/AsyncDropdown'
+import AddEditCredentialDialog from '@/views/credentials/AddEditCredentialDialog'
+import CredentialListDialog from '@/views/credentials/CredentialListDialog'
 
 // API
-import credentialsApi from 'api/credentials'
+import credentialsApi from '@/api/credentials'
 
 // ===========================|| CredentialInputHandler ||=========================== //
 
@@ -87,6 +87,10 @@ const CredentialInputHandler = ({ inputParam, data, onSelect, disabled = false }
         setSpecificCredentialDialogProps(dialogProp)
         setShowSpecificCredentialDialog(true)
     }
+
+    useEffect(() => {
+        setCredentialId(data?.credential ?? '')
+    }, [data])
 
     return (
         <div ref={ref}>

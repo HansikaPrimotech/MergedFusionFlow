@@ -6,14 +6,14 @@ import { styled, useTheme } from '@mui/material/styles'
 import { Box, Typography, Divider, Button } from '@mui/material'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import NodeInputHandler from 'views/canvas/NodeInputHandler'
-import NodeOutputHandler from 'views/canvas/NodeOutputHandler'
-import AdditionalParamsDialog from 'ui-component/dialog/AdditionalParamsDialog'
+import MainCard from '@/ui-component/cards/MainCard'
+import NodeInputHandler from '@/views/canvas/NodeInputHandler'
+import NodeOutputHandler from '@/views/canvas/NodeOutputHandler'
+import AdditionalParamsDialog from '@/ui-component/dialog/AdditionalParamsDialog'
 
 // const
-import { baseURL } from 'store/constant'
-import LlamaindexPNG from 'assets/images/llamaindex.png'
+import { baseURL } from '@/store/constant'
+import LlamaindexPNG from '@/assets/images/llamaindex.png'
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
     background: theme.palette.card.main,

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction, SET_CHATFLOW } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction, SET_CHATFLOW } from '@/store/actions'
 import { SketchPicker } from 'react-color'
 import PropTypes from 'prop-types'
 
@@ -8,20 +8,20 @@ import { Box, Typography, Button, Switch, OutlinedInput, Popover, Stack, IconBut
 import { useTheme } from '@mui/material/styles'
 
 // Project import
-import { StyledButton } from 'ui-component/button/StyledButton'
-import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
+import { StyledButton } from '@/ui-component/button/StyledButton'
+import { TooltipWithParser } from '@/ui-component/tooltip/TooltipWithParser'
 
 // Icons
 import { IconX, IconCopy, IconArrowUpRightCircle } from '@tabler/icons'
 
 // API
-import chatflowsApi from 'api/chatflows'
+import chatflowsApi from '@/api/chatflows'
 
 // utils
-import useNotifier from 'utils/useNotifier'
+import useNotifier from '@/utils/useNotifier'
 
 // Const
-import { baseURL } from 'store/constant'
+import { baseURL } from '@/store/constant'
 
 const defaultConfig = {
     backgroundColor: '#ffffff',

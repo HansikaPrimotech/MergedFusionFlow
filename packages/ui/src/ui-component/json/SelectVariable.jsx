@@ -2,9 +2,9 @@ import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Box, List, ListItemButton, ListItem, ListItemAvatar, ListItemText, Typography, Stack } from '@mui/material'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-import robotPNG from 'assets/images/robot.png'
-import chatPNG from 'assets/images/chathistory.png'
-import { baseURL } from 'store/constant'
+import robotPNG from '@/assets/images/robot.png'
+import chatPNG from '@/assets/images/chathistory.png'
+import { baseURL } from '@/store/constant'
 
 const SelectVariable = ({ availableNodesForVariable, disabled = false, onSelectAndReturnVal }) => {
     const customization = useSelector((state) => state.customization)

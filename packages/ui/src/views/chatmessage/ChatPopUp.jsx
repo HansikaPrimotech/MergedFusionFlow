@@ -7,21 +7,21 @@ import { useTheme } from '@mui/material/styles'
 import { IconMessage, IconX, IconEraser, IconArrowsMaximize } from '@tabler/icons'
 
 // project import
-import { StyledFab } from 'ui-component/button/StyledFab'
-import MainCard from 'ui-component/cards/MainCard'
-import Transitions from 'ui-component/extended/Transitions'
+import { StyledFab } from '@/ui-component/button/StyledFab'
+import MainCard from '@/ui-component/cards/MainCard'
+import Transitions from '@/ui-component/extended/Transitions'
 import { ChatMessage } from './ChatMessage'
 import ChatExpandDialog from './ChatExpandDialog'
 
 // api
-import chatmessageApi from 'api/chatmessage'
+import chatmessageApi from '@/api/chatmessage'
 
 // Hooks
-import useConfirm from 'hooks/useConfirm'
-import useNotifier from 'utils/useNotifier'
+import useConfirm from '@/hooks/useConfirm'
+import useNotifier from '@/utils/useNotifier'
 
 // Const
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from '@/store/actions'
 
 export const ChatPopUp = ({ chatflowid }) => {
     const theme = useTheme()
@@ -35,6 +35,7 @@ export const ChatPopUp = ({ chatflowid }) => {
     const [open, setOpen] = useState(false)
     const [showExpandDialog, setShowExpandDialog] = useState(false)
     const [expandDialogProps, setExpandDialogProps] = useState({})
+    const [previews, setPreviews] = useState([])
 
     const anchorRef = useRef(null)
     const prevOpen = useRef(open)
@@ -134,7 +135,8 @@ export const ChatPopUp = ({ chatflowid }) => {
     return (
         <>
             <StyledFab
-                sx={{ position: 'absolute', right: 20, top: 20, width: "100px" }}
+                // sx={{ position: 'absolute', right: 20, top: 20, width: "100px" }} changes by hansika
+                sx={{ position: 'absolute', right: 20, top: 20 }}
                 ref={anchorRef}
                 size='small'
                 color='secondary'
@@ -207,6 +209,8 @@ export const ChatPopUp = ({ chatflowid }) => {
                 dialogProps={expandDialogProps}
                 onClear={clearChat}
                 onCancel={() => setShowExpandDialog(false)}
+                previews={previews}
+                setPreviews={setPreviews}
             ></ChatExpandDialog>
         </>
     )

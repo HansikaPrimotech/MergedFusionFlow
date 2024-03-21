@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useTheme } from '@mui/material/styles'
 import { FormControl, Button } from '@mui/material'
 import { IconUpload } from '@tabler/icons'
-import { getFileName } from 'utils/genericHelper'
+import { getFileName } from '@/utils/genericHelper'
 
 export const File = ({ value, fileType, onChange, disabled = false }) => {
     const theme = useTheme()
@@ -60,6 +60,7 @@ export const File = ({ value, fileType, onChange, disabled = false }) => {
                 style={{
                     fontStyle: 'italic',
                     color: theme.palette.grey['600'],
+                    // color: theme.palette.grey['800'], new
                     marginBottom: '1rem'
                 }}
             >

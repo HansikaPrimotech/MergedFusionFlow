@@ -1,8 +1,9 @@
 .messagelist {
     width: 100%;
-    height: 100%;
+    /* height: 100%; changes by hansika
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden; */
+    height: auto;
     border-radius: 0.5rem;
 }
 

@@ -7,11 +7,11 @@ import { Box, Typography, IconButton } from '@mui/material'
 import { IconArrowsMaximize, IconAlertTriangle } from '@tabler/icons'
 
 // project import
-import { Dropdown } from 'ui-component/dropdown/Dropdown'
-import { Input } from 'ui-component/input/Input'
-import { SwitchInput } from 'ui-component/switch/Switch'
-import { JsonEditorInput } from 'ui-component/json/JsonEditor'
-import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
+import { Dropdown } from '@/ui-component/dropdown/Dropdown'
+import { Input } from '@/ui-component/input/Input'
+import { SwitchInput } from '@/ui-component/switch/Switch'
+import { JsonEditorInput } from '@/ui-component/json/JsonEditor'
+import { TooltipWithParser } from '@/ui-component/tooltip/TooltipWithParser'
 
 // ===========================|| NodeInputHandler ||=========================== //
 

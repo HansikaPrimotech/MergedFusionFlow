@@ -19,8 +19,8 @@ import { useTheme } from '@mui/material/styles'
 import { IconSearch, IconX } from '@tabler/icons'
 
 // const
-import { baseURL } from 'store/constant'
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
+import { baseURL } from '@/store/constant'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
 
 const CredentialListDialog = ({ show, dialogProps, onCancel, onCredentialSelected }) => {
     const portalElement = document.getElementById('portal')

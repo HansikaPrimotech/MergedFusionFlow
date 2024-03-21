@@ -5,8 +5,8 @@ import { styled } from '@mui/material/styles'
 import { Box, Grid, Typography } from '@mui/material'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import SkeletonChatflowCard from 'ui-component/cards/Skeleton/ChatflowCard'
+import MainCard from '@/ui-component/cards/MainCard'
+import SkeletonChatflowCard from '@/ui-component/cards/Skeleton/ChatflowCard'
 import theme from 'themes'
 import { useSelector } from 'react-redux'
 
@@ -33,7 +33,6 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
 // ===========================|| CONTRACT CARD ||=========================== //
 
 const ItemCard = ({ isLoading, data, images, onClick }) => {
-    const customization = useSelector((state) => state.customization);
     return (
         <>
             {isLoading ? (

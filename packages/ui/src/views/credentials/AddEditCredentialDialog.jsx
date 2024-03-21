@@ -2,32 +2,32 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from 'store/actions'
+import { enqueueSnackbar as enqueueSnackbarAction, closeSnackbar as closeSnackbarAction } from '@/store/actions'
 import parser from 'html-react-parser'
 
 // Material
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Box, Stack, OutlinedInput, Typography } from '@mui/material'
 
 // Project imports
-import { StyledButton } from 'ui-component/button/StyledButton'
-import ConfirmDialog from 'ui-component/dialog/ConfirmDialog'
+import { StyledButton } from '@/ui-component/button/StyledButton'
+import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
 import CredentialInputHandler from './CredentialInputHandler'
 
 // Icons
 import { IconX } from '@tabler/icons'
 
 // API
-import credentialsApi from 'api/credentials'
+import credentialsApi from '@/api/credentials'
 
 // Hooks
-import useApi from 'hooks/useApi'
+import useApi from '@/hooks/useApi'
 
 // utils
-import useNotifier from 'utils/useNotifier'
+import useNotifier from '@/utils/useNotifier'
 
 // const
-import { baseURL, REDACTED_CREDENTIAL_VALUE } from 'store/constant'
-import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from 'store/actions'
+import { baseURL, REDACTED_CREDENTIAL_VALUE } from '@/store/constant'
+import { HIDE_CANVAS_DIALOG, SHOW_CANVAS_DIALOG } from '@/store/actions'
 
 const AddEditCredentialDialog = ({ show, dialogProps, onCancel, onConfirm }) => {
     const portalElement = document.getElementById('portal')

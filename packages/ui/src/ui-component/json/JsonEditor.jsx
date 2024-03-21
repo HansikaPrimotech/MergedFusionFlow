@@ -4,7 +4,7 @@ import { FormControl, Popover } from '@mui/material'
 import ReactJson from 'flowise-react-json-view'
 import SelectVariable from './SelectVariable'
 import { cloneDeep } from 'lodash'
-import { getAvailableNodesForVariable } from 'utils/genericHelper'
+import { getAvailableNodesForVariable } from '@/utils/genericHelper'
 
 export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nodeId, disabled = false, isDarkMode = false }) => {
     const [myValue, setMyValue] = useState(value ? JSON.parse(value) : {})

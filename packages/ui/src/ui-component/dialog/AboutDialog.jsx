@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Dialog, DialogContent, DialogTitle, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper } from '@mui/material'
 import moment from 'moment'
 import axios from 'axios'
-import { baseURL } from 'store/constant'
+import { baseURL } from '@/store/constant'
 
 const AboutDialog = ({ show, onCancel }) => {
     const portalElement = document.getElementById('portal')

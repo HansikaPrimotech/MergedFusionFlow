@@ -33,18 +33,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // project imports
-import MainCard from 'ui-component/cards/MainCard'
-import Transitions from 'ui-component/extended/Transitions'
-import { StyledFab } from 'ui-component/button/StyledFab'
+import MainCard from '@/ui-component/cards/MainCard'
+import Transitions from '@/ui-component/extended/Transitions'
+import { StyledFab } from '@/ui-component/button/StyledFab'
 
 // icons
 import { IconPlus, IconSearch, IconMinus, IconX } from '@tabler/icons'
-import LlamaindexPNG from 'assets/images/llamaindex.png'
-import LangChainPNG from 'assets/images/langchain.png'
+import LlamaindexPNG from '@/assets/images/llamaindex.png'
+import LangChainPNG from '@/assets/images/langchain.png'
 
 // const
-import { baseURL } from 'store/constant'
-import { SET_COMPONENT_NODES } from 'store/actions'
+import { baseURL } from '@/store/constant'
+import { SET_COMPONENT_NODES } from '@/store/actions'
 
 // ==============================|| ADD NODES||============================== //
 function a11yProps(index) {

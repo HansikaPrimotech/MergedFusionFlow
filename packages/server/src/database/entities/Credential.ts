@@ -16,9 +16,17 @@ export class Credential implements ICredential {
     @Column({ type: 'text' })
     encryptedData: string
 
+<<<<<<< HEAD
     @CreateDateColumn()
     createdDate: Date
 
+=======
+    @Column({type:'timestamp'})
+    @CreateDateColumn()
+    createdDate: Date
+
+    @Column({type:'timestamp'})
+>>>>>>> merged
     @UpdateDateColumn()
     updatedDate: Date
 }

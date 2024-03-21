@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { FormControl, OutlinedInput, InputBase, Popover } from '@mui/material'
-import SelectVariable from 'ui-component/json/SelectVariable'
-import { getAvailableNodesForVariable } from 'utils/genericHelper'
+import SelectVariable from '@/ui-component/json/SelectVariable'
+import { getAvailableNodesForVariable } from '@/utils/genericHelper'
 
 export const Input = ({ inputParam, value, nodes, edges, nodeId, onChange, disabled = false }) => {
     const [myValue, setMyValue] = useState(value ?? '')
@@ -87,29 +87,29 @@ export const Input = ({ inputParam, value, nodes, edges, nodeId, onChange, disab
                     />
                 </FormControl>
             ) : (
-            <FormControl sx={{ mt: 1, width: '100%' }} size='small'>
-                <OutlinedInput
-                    id={inputParam.name}
-                    size='small'
-                    disabled={disabled}
-                    type={getInputType(inputParam.type)}
-                    placeholder={inputParam.placeholder}
-                    multiline={!!inputParam.rows}
-                    rows={inputParam.rows ?? 1}
-                    value={myValue}
-                    name={inputParam.name}
-                    onChange={(e) => {
-                        setMyValue(e.target.value)
-                        onChange(e.target.value)
-                    }}
-                    inputProps={{
-                        step: inputParam.step ?? 1,
-                        style: {
-                            height: inputParam.rows ? '90px' : 'inherit'
-                        }
-                    }}
-                />
-            </FormControl>
+                <FormControl sx={{ mt: 1, width: '100%' }} size='small'>
+                    <OutlinedInput
+                        id={inputParam.name}
+                        size='small'
+                        disabled={disabled}
+                        type={getInputType(inputParam.type)}
+                        placeholder={inputParam.placeholder}
+                        multiline={!!inputParam.rows}
+                        rows={inputParam.rows ?? 1}
+                        value={myValue}
+                        name={inputParam.name}
+                        onChange={(e) => {
+                            setMyValue(e.target.value)
+                            onChange(e.target.value)
+                        }}
+                        inputProps={{
+                            step: inputParam.step ?? 1,
+                            style: {
+                                height: inputParam.rows ? '90px' : 'inherit'
+                            }
+                        }}
+                    />
+                </FormControl>
             )}
             <div ref={ref}></div>
             {inputParam?.acceptVariable && (
