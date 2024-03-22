@@ -16,17 +16,11 @@ export class Variable implements IVariable {
     @Column({ default: 'string', type: 'text' })
     type: string
 
-<<<<<<< HEAD
+    @Column({ type: 'timestamp' })
     @CreateDateColumn()
     createdDate: Date
 
-=======
-    @Column({type:'timestamp'})
-    @CreateDateColumn()
-    createdDate: Date
-
-    @Column({type:'timestamp'})
->>>>>>> merged
+    @Column({ type: 'timestamp' })
     @UpdateDateColumn()
     updatedDate: Date
 }

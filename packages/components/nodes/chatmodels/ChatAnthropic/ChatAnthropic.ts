@@ -1,7 +1,7 @@
 import { AnthropicInput, ChatAnthropic as LangchainChatAnthropic } from '@langchain/anthropic'
 import { BaseCache } from '@langchain/core/caches'
 import { BaseLLMParams } from '@langchain/core/language_models/llms'
-import { ICommonObject, IMultiModalOption, INode, INodeData, INodeParams } from '../../../src/Interface'
+import { ICommonObject, INode, INodeData, INodeParams } from '../../../src/Interface'
 import { getBaseClasses, getCredentialData, getCredentialParam } from '../../../src/utils'
 import { ChatAnthropic } from './FlowiseChatAnthropic'
 
@@ -148,12 +148,10 @@ class ChatAnthropic_ChatModels implements INode {
         if (topK) obj.topK = parseFloat(topK)
         if (cache) obj.cache = cache
 
-            }
-        }
-
         const model = new ChatAnthropic(nodeData.id, obj)
-        model.setMultiModalOption(multiModalOption)
+        // model.setMultiModalOption(multiModalOption)
         return model
     }
+}
 
 module.exports = { nodeClass: ChatAnthropic_ChatModels }

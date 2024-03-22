@@ -135,8 +135,7 @@ export const ChatPopUp = ({ chatflowid }) => {
     return (
         <>
             <StyledFab
-                // sx={{ position: 'absolute', right: 20, top: 20, width: "100px" }} changes by hansika
-                sx={{ position: 'absolute', right: 20, top: 20 }}
+                sx={{ position: 'absolute', right: 20, top: 20, width: '100px' }}
                 ref={anchorRef}
                 size='small'
                 color='secondary'
@@ -145,11 +144,11 @@ export const ChatPopUp = ({ chatflowid }) => {
                 onClick={handleToggle}
             >
                 {open ? <IconX /> : <IconMessage />}
-                <p style={{ fontSize: "1rem", marginLeft: "5px" }}> Chat</p>
+                <p style={{ fontSize: '1rem', marginLeft: '5px' }}> Chat</p>
             </StyledFab>
             {open && (
                 <StyledFab
-                    sx={{ position: 'absolute', right: "138px", top: 20, width: "100px" }}
+                    sx={{ position: 'absolute', right: '138px', top: 20, width: '100px' }}
                     onClick={clearChat}
                     size='small'
                     // color='error'
@@ -157,12 +156,12 @@ export const ChatPopUp = ({ chatflowid }) => {
                     title='Clear Chat History'
                 >
                     <IconEraser />
-                    <p style={{ fontSize: "1rem", marginLeft: "5px" }}>Clear</p>
+                    <p style={{ fontSize: '1rem', marginLeft: '5px' }}>Clear</p>
                 </StyledFab>
             )}
             {open && (
                 <StyledFab
-                    sx={{ position: 'absolute', right: "255px", top: 20, width: "100px" }}
+                    sx={{ position: 'absolute', right: '255px', top: 20, width: '100px' }}
                     onClick={expandChat}
                     size='small'
                     color='primary'
@@ -170,7 +169,7 @@ export const ChatPopUp = ({ chatflowid }) => {
                     title='Expand Chat'
                 >
                     <IconArrowsMaximize />
-                    <p style={{ fontSize: "1rem", marginLeft: "5px" }}>Expand</p>
+                    <p style={{ fontSize: '1rem', marginLeft: '5px' }}>Expand</p>
                 </StyledFab>
             )}
             <Popper

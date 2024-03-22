@@ -31,20 +31,14 @@ export class ChatFlow implements IChatFlow {
     @Column({ nullable: true, type: 'text' })
     analytic?: string
 
-<<<<<<< HEAD
-    @CreateDateColumn()
-    createdDate: Date
-
-=======
     @Column({ nullable: true, type: 'text' })
     speechToText?: string
 
-    @Column({type:'timestamp'})
+    @Column({ type: 'timestamp' })
     @CreateDateColumn()
     createdDate: Date
 
-    @Column({type:'timestamp'})
->>>>>>> merged
+    @Column({ type: 'timestamp' })
     @UpdateDateColumn()
     updatedDate: Date
 

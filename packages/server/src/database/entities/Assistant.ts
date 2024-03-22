@@ -10,27 +10,17 @@ export class Assistant implements IAssistant {
     @Column({ type: 'text' })
     details: string
 
-<<<<<<< HEAD
-    @Column()
-=======
-    @Column({ type: 'uuid'})
->>>>>>> merged
+    @Column({ type: 'uuid' })
     credential: string
 
     @Column({ nullable: true })
     iconSrc?: string
 
-<<<<<<< HEAD
-    @CreateDateColumn()
-    createdDate: Date
-
-=======
     @Column({ type: 'timestamp' })
     @CreateDateColumn()
     createdDate: Date
 
     @Column({ type: 'timestamp' })
->>>>>>> merged
     @UpdateDateColumn()
     updatedDate: Date
 }

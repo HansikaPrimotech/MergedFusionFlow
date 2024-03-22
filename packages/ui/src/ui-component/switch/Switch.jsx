@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { FormControl, Switch, Typography } from '@mui/material'
 
 export const SwitchInput = ({ label, value, onChange, disabled = false }) => {
-    const [myValue, setMyValue] = useState(!!value ?? false)
+    // const [myValue, setMyValue] = useState(!!value ?? false)
+    const [myValue, setMyValue] = useState(value || false)
 
     useEffect(() => {
         setMyValue(value)
@@ -31,7 +32,7 @@ export const SwitchInput = ({ label, value, onChange, disabled = false }) => {
 
 SwitchInput.propTypes = {
     label: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+    value: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
     onChange: PropTypes.func,
     disabled: PropTypes.bool
 }
