@@ -31,6 +31,7 @@ import MainCard from '@/ui-component/cards/MainCard'
 import { StyledButton } from '@/ui-component/button/StyledButton'
 import APIKeyDialog from './APIKeyDialog'
 import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // API
 import apiKeyApi from '@/api/apikey'
@@ -336,7 +337,7 @@ const APIKey = () => {
                             }}
                         >
                             {/* <h1>API Keys&nbsp;</h1> */}
-                    <Typography variant='h1'>API Keys&nbsp;</Typography>
+                            <Typography variant='h1'>API Keys&nbsp;</Typography>
                             <TextField
                                 size='small'
                                 sx={{ display: { xs: 'none', sm: 'block' }, ml: 3 }}
@@ -431,4 +432,4 @@ const APIKey = () => {
     )
 }
 
-export default APIKey
+export default withAuthenticationRequired(APIKey)

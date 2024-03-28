@@ -13,6 +13,7 @@ import { useTheme } from '@mui/material/styles'
 import MarketplaceCanvasNode from './MarketplaceCanvasNode'
 import MarketplaceCanvasHeader from './MarketplaceCanvasHeader'
 import StickyNote from '../canvas/StickyNote'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 const nodeTypes = { customNode: MarketplaceCanvasNode, stickyNote: StickyNote }
 const edgeTypes = { buttonedge: '' }
@@ -102,4 +103,4 @@ const MarketplaceCanvas = () => {
     )
 }
 
-export default MarketplaceCanvas
+export default withAuthenticationRequired(MarketplaceCanvas)

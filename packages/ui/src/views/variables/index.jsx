@@ -47,6 +47,7 @@ import VariablesEmptySVG from '@/assets/images/variables_empty.svg'
 // const
 import AddEditVariableDialog from './AddEditVariableDialog'
 import HowToUseVariablesDialog from './HowToUseVariablesDialog'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // ==============================|| Credentials ||============================== //
 
@@ -313,4 +314,4 @@ const Variables = () => {
     )
 }
 
-export default Variables
+export default withAuthenticationRequired(Variables)

@@ -63,12 +63,13 @@ const messageImageStyle = {
     objectFit: 'cover'
 }
 
-export const ChatMessage = ({ open, chatflowid, isDialog, previews, setPreviews }) => {
+export const ChatMessage = ({ open, chatflowid, isDialog }) => {
     const theme = useTheme()
     const customization = useSelector((state) => state.customization)
 
     const ps = useRef()
 
+    const [previews, setPreviews] = useState([])
     const [userInput, setUserInput] = useState('')
     const [loading, setLoading] = useState(false)
     const [messages, setMessages] = useState([
@@ -741,7 +742,7 @@ export const ChatMessage = ({ open, chatflowid, isDialog, previews, setPreviews 
                 </Box>
             )}
             <div ref={ps} className={`${isDialog ? 'cloud-dialog' : 'cloud'}`}>
-                <div id='messagelist' className={'messagelist'}>
+                <div className={'messagelist'}>
                     {messages &&
                         messages.map((message, index) => {
                             return (

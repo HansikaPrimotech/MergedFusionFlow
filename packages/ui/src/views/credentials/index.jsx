@@ -48,6 +48,7 @@ import CredentialEmptySVG from '@/assets/images/credential_empty.svg'
 // const
 import { baseURL } from '@/store/constant'
 import { SET_COMPONENT_CREDENTIALS } from '@/store/actions'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // ==============================|| Credentials ||============================== //
 
@@ -206,7 +207,7 @@ const Credentials = () => {
                             }}
                         >
                             {/* <h1>Credentials&nbsp;</h1> */}
-                    <Typography variant='h1'>Credentials&nbsp;</Typography>
+                            <Typography variant='h1'>Credentials&nbsp;</Typography>
                             <TextField
                                 size='small'
                                 sx={{ display: { xs: 'none', sm: 'block' }, ml: 3 }}
@@ -335,4 +336,4 @@ const Credentials = () => {
     )
 }
 
-export default Credentials
+export default withAuthenticationRequired(Credentials)

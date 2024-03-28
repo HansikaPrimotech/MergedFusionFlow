@@ -330,7 +330,7 @@ export class App {
             const functionInputVariables = Object.fromEntries(
                 [...(body?.javascriptFunction ?? '').matchAll(/\$([a-zA-Z0-9_]+)/g)].map((g) => [g[1], undefined])
             )
-            const nodeData = { inputs: { functionInputVariables, ...body } }
+            const nodeData = { inputs: { functionInputVariables, task: body } }
             if (Object.prototype.hasOwnProperty.call(this.nodesPool.componentNodes, 'customFunction')) {
                 try {
                     const nodeInstanceFilePath = this.nodesPool.componentNodes['customFunction'].filePath as string

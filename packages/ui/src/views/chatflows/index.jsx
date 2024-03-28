@@ -11,8 +11,6 @@ import MainCard from '@/ui-component/cards/MainCard'
 import ItemCard from '@/ui-component/cards/ItemCard'
 import { gridSpacing } from '@/store/constant'
 import WorkflowEmptySVG from '@/assets/images/workflow_empty.svg'
-import LoginDialog from '@/ui-component/dialog/LoginDialog'
-import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
 
 // API
 import chatflowsApi from '@/api/chatflows'
@@ -22,6 +20,7 @@ import useApi from '@/hooks/useApi'
 
 // const
 import { baseURL } from '@/store/constant'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // icons
 import { IconPlus, IconSearch, IconLayoutGrid, IconList } from '@tabler/icons'
@@ -241,4 +240,4 @@ const Chatflows = () => {
     )
 }
 
-export default Chatflows
+export default withAuthenticationRequired(Chatflows)

@@ -17,7 +17,7 @@ import { IconMenu2 } from '@tabler/icons'
 
 // store
 import { SET_DARKMODE } from '@/store/actions'
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react'
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
@@ -69,7 +69,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }))
 
 const Header = ({ handleLeftDrawerToggle }) => {
-    const { logout, user } = useAuth0();
+    const { logout, user } = useAuth0()
     const theme = useTheme()
     const navigate = useNavigate()
 
@@ -85,8 +85,8 @@ const Header = ({ handleLeftDrawerToggle }) => {
     }
 
     const signOutClicked = () => {
-        logout();
-      };
+        logout()
+    }
 
     // const signOutClicked = () => { new
     //     localStorage.removeItem('username')
@@ -113,26 +113,26 @@ const Header = ({ handleLeftDrawerToggle }) => {
                 <ButtonBase
                     sx={{
                         // borderRadius: '12px',
-                        borderRadius: "0px",
-                        overflow: "hidden",
+                        borderRadius: '0px',
+                        overflow: 'hidden'
                     }}
                 >
                     <Avatar
                         // variant='rounded'
-                        variant="square"
+                        variant='square'
                         sx={{
                             ...theme.typography.commonAvatar,
                             ...theme.typography.mediumAvatar,
                             transition: 'all .2s ease-in-out',
                             // background: theme.palette.secondary.light,
                             // color: theme.palette.secondary.dark,
-                            background: "#E19379",
-                            color: "#ffffff",
-                            "&:hover": {
+                            background: '#E19379',
+                            color: '#ffffff',
+                            '&:hover': {
                                 // background: theme.palette.secondary.dark,
                                 // color: theme.palette.secondary.light
-                                background: "#df6a43",
-                            },
+                                background: '#df6a43'
+                            }
                         }}
                         onClick={handleLeftDrawerToggle}
                         color='inherit'
@@ -144,16 +144,10 @@ const Header = ({ handleLeftDrawerToggle }) => {
             <Box sx={{ flexGrow: 1 }} />
             <MaterialUISwitch checked={isDark} onChange={changeDarkMode} />
             <Box sx={{ ml: 2 }}></Box>
-            <ProfileSection 
-                handleLogout={signOutClicked} 
-                // username={localStorage.getItem('username') ?? ''} 
-                username={
-                    user
-                      ? user.preferred_username
-                        ? user.preferred_username
-                        : user.name
-                      : ""
-                }
+            <ProfileSection
+                handleLogout={signOutClicked}
+                // username={localStorage.getItem('username') ?? ''}
+                username={user ? (user.preferred_username ? user.preferred_username : user.name) : ''}
             />
         </>
     )

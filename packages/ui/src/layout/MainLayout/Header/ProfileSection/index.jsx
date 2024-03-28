@@ -28,7 +28,7 @@ import Transitions from '@/ui-component/extended/Transitions'
 import AboutDialog from '@/ui-component/dialog/AboutDialog'
 
 // assets
-import { IconLogin, IconLogout, IconSettings, IconInfoCircle } from '@tabler/icons'
+import { IconLogin, IconLogout, IconSettings } from '@tabler/icons'
 
 import './index.css'
 
@@ -60,6 +60,7 @@ const ProfileSection = ({ username, handleLogout }) => {
         if (prevOpen.current === true && open === false) {
             anchorRef.current.focus()
         }
+        console.log(username, 'Bla bla')
 
         prevOpen.current = open
     }, [open])
@@ -70,28 +71,28 @@ const ProfileSection = ({ username, handleLogout }) => {
                 ref={anchorRef}
                 sx={{
                     // borderRadius: "12px",
-                    borderRadius: "0px",
-                    overflow: "hidden",
+                    borderRadius: '0px',
+                    overflow: 'hidden'
                 }}
             >
                 <Avatar
                     // variant="rounded"
-                    variant="square"
+                    variant='square'
                     sx={{
                         ...theme.typography.commonAvatar,
                         ...theme.typography.mediumAvatar,
-                        transition: "all .2s ease-in-out",
+                        transition: 'all .2s ease-in-out',
                         // background: theme.palette.secondary.light,
                         // color: theme.palette.secondary.dark,
-                        background: "#E19379",
-                        color: "#ffffff",
-                        "&:hover": {
-                          // background: theme.palette.secondary.dark,
-                          // color: theme.palette.secondary.light,
-                          background: "#df6a43",
-                          // color: "#ffffff"
-                        },
-                      }}
+                        background: '#E19379',
+                        color: '#ffffff',
+                        '&:hover': {
+                            // background: theme.palette.secondary.dark,
+                            // color: theme.palette.secondary.light,
+                            background: '#df6a43'
+                            // color: "#ffffff"
+                        }
+                    }}
                     onClick={handleToggle}
                     color='inherit'
                 >
@@ -152,35 +153,27 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                         sx={{
                                                             borderRadius: `${customization.borderRadius}px`,
                                                             '&:hover p': {
-                                                                color: customization.isDarkMode ? '#fff !important' : '#fff !important',
-                                                            },
+                                                                color: customization.isDarkMode ? '#fff !important' : '#fff !important'
+                                                            }
                                                         }}
                                                         onClick={handleLogout}
                                                     >
                                                         <ListItemIcon>
-                                                            <IconLogout stroke={1.5} size="1.3rem" />
+                                                            <IconLogout stroke={1.5} size='1.3rem' />
                                                         </ListItemIcon>
-                                                        <ListItemText
-                                                            primary={
-                                                                <Typography variant="body2">Logout</Typography>
-                                                            }
-                                                        />
+                                                        <ListItemText primary={<Typography variant='body2'>Logout</Typography>} />
                                                     </ListItemButton>
                                                 ) : (
                                                     <ListItemButton
                                                         sx={{
-                                                            borderRadius: `${customization.borderRadius}px`,
+                                                            borderRadius: `${customization.borderRadius}px`
                                                         }}
-                                                     onClick={handleLogout}
+                                                        onClick={handleLogout}
                                                     >
                                                         <ListItemIcon>
-                                                            <IconLogin stroke={1.5} size="1.3rem" />
+                                                            <IconLogin stroke={1.5} size='1.3rem' />
                                                         </ListItemIcon>
-                                                        <ListItemText
-                                                            primary={
-                                                                <Typography variant="body2">Login</Typography>
-                                                            }
-                                                        />
+                                                        <ListItemText primary={<Typography variant='body2'>Login</Typography>} />
                                                     </ListItemButton>
                                                 )}
                                             </List>

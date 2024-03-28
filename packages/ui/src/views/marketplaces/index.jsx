@@ -10,8 +10,6 @@ import {
     Box,
     Stack,
     Badge,
-    Tabs, 
-    Tab,
     Typography,
     Toolbar,
     TextField,
@@ -47,6 +45,7 @@ import { baseURL } from '@/store/constant'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { MarketplaceTable } from '@/ui-component/table/MarketplaceTable'
 import MenuItem from '@mui/material/MenuItem'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props
@@ -458,4 +457,4 @@ const Marketplace = () => {
     )
 }
 
-export default Marketplace
+export default withAuthenticationRequired(Marketplace)

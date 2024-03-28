@@ -12,6 +12,7 @@ import { gridSpacing } from '@/store/constant'
 import ToolEmptySVG from '@/assets/images/tools_empty.svg'
 import { StyledButton } from '@/ui-component/button/StyledButton'
 import ToolDialog from './ToolDialog'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // API
 import toolsApi from '@/api/tools'
@@ -153,4 +154,4 @@ const Tools = () => {
     )
 }
 
-export default Tools
+export default withAuthenticationRequired(Tools)

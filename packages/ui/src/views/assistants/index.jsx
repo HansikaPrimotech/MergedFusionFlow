@@ -13,6 +13,7 @@ import ToolEmptySVG from '@/assets/images/tools_empty.svg'
 import { StyledButton } from '@/ui-component/button/StyledButton'
 import AssistantDialog from './AssistantDialog'
 import LoadAssistantDialog from './LoadAssistantDialog'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // API
 import assistantsApi from '@/api/assistants'
@@ -91,7 +92,7 @@ const Assistants = () => {
                 <Stack flexDirection='row'>
                     <Grid sx={{ mb: 1.25 }} container direction='row'>
                         {/* <h1>OpenAI Assistants</h1> */}
-                    <Typography variant='h1'>OpenAI Assistants</Typography>
+                        <Typography variant='h1'>OpenAI Assistants</Typography>
                         <Box sx={{ flexGrow: 1 }} />
                         <Grid item>
                             <Button variant='outlined' sx={{ mr: 2 }} onClick={loadExisting} startIcon={<IconFileImport />}>
@@ -144,4 +145,4 @@ const Assistants = () => {
     )
 }
 
-export default Assistants
+export default withAuthenticationRequired(Assistants)

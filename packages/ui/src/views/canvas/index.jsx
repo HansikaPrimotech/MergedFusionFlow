@@ -28,6 +28,7 @@ import ConfirmDialog from '@/ui-component/dialog/ConfirmDialog'
 import { ChatPopUp } from '@/views/chatmessage/ChatPopUp'
 import { VectorStorePopUp } from '@/views/vectorstore/VectorStorePopUp'
 import { flowContext } from '@/store/context/ReactFlowContext'
+import { withAuthenticationRequired } from '@auth0/auth0-react'
 
 // API
 import nodesApi from '@/api/nodes'
@@ -551,4 +552,4 @@ const Canvas = () => {
     )
 }
 
-export default Canvas
+export default withAuthenticationRequired(Canvas)
